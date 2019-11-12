@@ -1,0 +1,119 @@
+h3 {
+    margin-top: 80px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #1A051D;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main .img {
+    height: 350px;
+}
+
+form {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+form label {
+    color: #1A051D;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+form input, select {
+    height: 40px;
+    margin: 16px 0 24px 0;
+    border: 1px solid #B9C6CE;
+    border-radius: 6px;
+    padding: 0 24px;
+    font-size: 16px;
+    color: #3F3356;
+}
+
+form input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    color: #B9C6CE;
+}
+
+form select option {
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    color: #3F3356;
+}
+
+form textarea {
+    height: 160px;
+    margin-top: 16px;
+    border: 1px solid #B9C6CE;
+    border-radius: 6px;
+    padding: 18px 24px;
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    color: #3F3356;
+}
+
+form #inputFile {
+    margin-top: 24px;
+    height: 120px;
+    border: 3px dashed #6979F8;
+    border-radius: 6px;
+    color: #6979F8;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form #inputFile span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+form #inputFile input {
+    display: none;
+}
+
+form #inputFile.has-image {
+    border: 1px solid #6979F8;
+}
+
+form #inputFile.has-image svg, form #inputFile.has-image span {
+    display: none;
+}
+
+form button {
+    margin-top: 40px;
+    padding: 20px 0;
+    border: 0;
+    border-radius: 6px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #fff;
+    text-transform: uppercase;
+    background: #6979F8;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #4155F5;
+}

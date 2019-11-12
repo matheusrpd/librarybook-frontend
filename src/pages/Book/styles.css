@@ -1,0 +1,75 @@
+.bookDetails {
+    margin-top: 64px;
+    margin-left: -4px;
+    display: flex;
+}
+
+.bookDetails .details {
+    margin-left: 40px;
+}
+
+.bookDetails .details h3 {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #3F3356;
+    margin-top: 20px;
+}
+
+.bookDetails .details .author {
+    margin-top: 8px;
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #B9C6CE;
+}
+
+.bookDetails .details .description {
+    margin-top: 32px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 26px;
+    color: #3F3356;
+}
+
+.bookDetails .details .infos {
+    margin-top: 24px;
+}
+
+.bookDetails .details .infos .pages, .read {
+    display: flex;
+}
+
+.bookDetails .details .infos .pages, .read {
+    color: #1A051D;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.bookDetails .details .infos .pages p {
+    margin-left: 6px;
+    font-weight: normal;
+}
+
+.bookDetails .details .infos .read p {
+    margin-left: 6px;
+    font-weight: 900;
+    color: #6979F8;
+}
+
+.bookDetails .details button {
+    padding: 15px 40px;
+    margin-top: 32px;
+    background: #FF647C;
+    border: 0;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+  
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}

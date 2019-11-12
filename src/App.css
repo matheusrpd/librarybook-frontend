@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Nunito&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: #fff;
+}
+
+body, input, button {
+  font-family: "Nunito", "Montserrat", sans-serif;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 64px 0;
+}
+
+.container header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container header .logo {
+  width: 250px;
+}
+
+.container header input {
+  width: 400px;
+  height: 48px;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 8px #00000012;
+  border: 0;
+  border-radius: 6px;
+  padding: 0 24px;
+
+  font-family: "Nunito", sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #B9C6CE;
+}
+
+#search::-webkit-input-placeholder{
+  font-family: "Nunito", sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #B9C6CE;
+}
+
+.container header a {
+  text-decoration: none;
+}
+
+.container header button {
+  padding: 15px 20px;
+  background: #6979F8;
+  border: 0;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container header button img {
+  margin-right: 8px;
+}
