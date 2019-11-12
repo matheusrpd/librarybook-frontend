@@ -9,11 +9,13 @@ import IconAdd from "../../assets/IconAdd.svg";
 
 export default function Dashboard({ match, history }) {
   const [book, setBook] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
       async function loadBook() {
         const response = await api.get(`/books/${match.params.id}`);
         setBook(response.data);
+        setIsLoading(false);
       }
       loadBook();
   }, [match.params.id]);
@@ -39,21 +41,23 @@ export default function Dashboard({ match, history }) {
       </header>
 
       <div className="bookDetails">  
-        { book ?  
-          <>
-            <img src={book.url} alt=""/>
-            <div className="details">
-              <h3>{book.name}</h3>
-              <strong className="author">{book.author}</strong>
-              <p className="description">{book.description}</p>
-              <div className="infos">
-                <strong className="pages">Número de páginas: <p>{book.pages}</p></strong>
-                <strong className="read">Lido: {book.status ? book.status === "yes" ? <p>SIM</p> : <p>NÃO</p> : <p>NÃO INFORMADO</p>} </strong>
+        { isLoading ? 
+            ""
+          : book ?  
+            <>
+              <img src={book.url} alt=""/>
+              <div className="details">
+                <h3>{book.name}</h3>
+                <strong className="author">{book.author}</strong>
+                <p className="description">{book.description}</p>
+                <div className="infos">
+                  <strong className="pages">Número de páginas: <p>{book.pages}</p></strong>
+                  <strong className="read">Lido: {book.status ? book.status === "yes" ? <p>SIM</p> : <p>NÃO</p> : <p>NÃO INFORMADO</p>} </strong>
+                </div>
+                <button onClick={handleDelete}>Deletar livro</button>
               </div>
-              <button onClick={handleDelete}>Deletar livro</button>
-            </div>
-          </>
-         : <h3>NÃO EXISTE INFORMAÇÕES PARA MOSTRAR!</h3> 
+            </>
+          : <h3>NÃO EXISTE INFORMAÇÕES PARA MOSTRAR!</h3> 
         }
       </div>
     </div>
