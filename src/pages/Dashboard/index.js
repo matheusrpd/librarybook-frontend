@@ -9,14 +9,24 @@ import IconAdd from "../../assets/IconAdd.svg";
 
 export default function Dashboard({ history }) {
     const [books, setBooks] = useState([]);
+    const [filteredBooks, setFilteredBooks] = useState([]);
+    const [search, setSearch] = useState("");
 
     useEffect(() => {
         async function loadBooks() {
           const response = await api.get("/books");
           setBooks(response.data);
+          setFilteredBooks(response.data);
         }
         loadBooks();
     }, []);
+
+    useEffect(() => {
+        const results = books.filter((book) =>{
+            return book.name.toLowerCase().includes(search.toLocaleLowerCase())
+        });    
+        setFilteredBooks(results);
+    }, [search]);
 
     function handleClick(id) {
         history.push(`/book/${id}`);
@@ -26,7 +36,12 @@ export default function Dashboard({ history }) {
         <div className="container">
             <header>
                 <img src={Logo} alt="Logo" className="logo" />
-                <input type="text" id="search" placeholder="Pesquisar" />
+                <input 
+                    type="text" 
+                    id="search" 
+                    placeholder="Pesquisar" 
+                    value={search} 
+                    onChange={event => setSearch(event.target.value)}/>
                 <Link to="/newbook">
                     <button>
                         <img src={IconAdd} alt=""/>
@@ -37,7 +52,7 @@ export default function Dashboard({ history }) {
 
             <div className="books">
 
-                {books.map(book => (
+                {filteredBooks.map(book => (
                     <div key={book._id} className="book" onClick={() => handleClick(book._id)}>
                         <img src={book.url} alt="Capa do livro"/>
                         <h3>{book.name}</h3>
