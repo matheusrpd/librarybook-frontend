@@ -19,11 +19,9 @@ export default function Dashboard({ match, history }) {
   }, [match.params.id]);
 
   async function handleDelete() {
-    console.log(book._id);
     await api.delete(`/books/${book._id}`);
 
     history.push("/");
-    console.log("AInda aqui");
   }
 
   return (
